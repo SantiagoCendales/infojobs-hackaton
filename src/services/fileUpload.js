@@ -1,4 +1,4 @@
-const cloudName = import.meta.env.CLOUDINARY_CLOUD_NAME ?? ''
+const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME ?? ''
 
 export const fileUpload = async (file) => {
 
@@ -16,7 +16,7 @@ export const fileUpload = async (file) => {
             method: 'POST',
             body: formData
         })
-        if (!resp.ok) throw new Error('No se pudo subir la imagen')
+        if (!resp.ok) throw new Error('No se pudo subir la hoja de vida')
         const cloudResp = await resp.json();
         return cloudResp.secure_url;
 

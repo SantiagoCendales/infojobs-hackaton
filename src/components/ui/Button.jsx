@@ -1,7 +1,8 @@
 
-export const Button = ({label, disabled = false}) => {
+export const Button = ({label, disabled = false, action}) => {
   return (
     <button
+      onClick={() => action()}
       disabled={disabled}
       className="
         border

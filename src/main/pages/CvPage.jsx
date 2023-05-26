@@ -4,6 +4,9 @@ import Container from "../../components/ui/Container"
 import { UserDetailCard } from "../components/UserDetailCard"
 import { UserInfoCard } from "../components/UserInfoCard"
 import { UserAditionalActions } from "../components/UserAditionalActions"
+import getPdfText from "../../services/getPdfText"
+import { fileUpload } from "../../services/fileUpload"
+import getProfileInfo from "../../services/extractData"
 
 const experienceInfo = [
   {
@@ -30,20 +33,7 @@ const education = [
 ]
 
 export const CvPage = () => {
-  const [text, setText] = useState('')
 
-  const handleFileChange = async ({ target }) => {
-    // if(target.files.length === 0) return; 
-    // const file = target.files['0']
-    // const pdfPath = await fileUpload(file)
-    // // toast.success("¡Carga exitosa!")
-    // getPdfText({pdfPath}).then(text => {
-    //   setText(text)
-    // })
-    // // LLamado al api de openAi
-    // // getProfileInfo()
-    getUserInfo()
-  }
   return (
     <div className="py-8">
       <Container>
@@ -96,15 +86,9 @@ export const CvPage = () => {
             </div>
 
             <div>
-              <UserAditionalActions />
+              <UserAditionalActions/>
             </div>
           </div>
-          <input
-            type="file"
-            accept=".pdf"
-            onChange={ handleFileChange }
-          />
-          <p>{text}</p>
         </main>
       </Container>
     </div>
