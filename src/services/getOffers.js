@@ -1,8 +1,9 @@
+const infojobsToken = import.meta.env.VITE_INFOJOBS_TOKEN ?? ''
 
 const getOffers = async () => {
   const data = await fetch('api/api/9/offer', {
     headers: {
-      "Authorization": "Basic MTZmMGM2ZTM0ODYyNDc4Mjg1MDc1MDg0MGNiZjNjMjA6RE5nK0JHMzl0M3dzSWRSLzRNWmNqaGtDVmJhTW5kMFNIRW5oQXdyK2lsUTJsYzJSbW8=",
+      "Authorization": `Basic ${infojobsToken}`,
       "Content-Type": "application/json"
     }
   })

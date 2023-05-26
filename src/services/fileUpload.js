@@ -1,25 +1,27 @@
-export const fileUpload = async(file) => {
+const cloudName = import.meta.env.CLOUDINARY_CLOUD_NAME ?? ''
 
-  if(!file) throw new Error('No se tienen archivos para subir');
+export const fileUpload = async (file) => {
 
-  const cloudUrl = 'https://api.cloudinary.com/v1_1/dnzesrac8/upload';
+    if (!file) throw new Error('No se tienen archivos para subir');
 
-  const formData = new FormData();
+    const cloudUrl = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
 
-  formData.append('upload_preset', 'react-journal');
-  formData.append('file', file);
+    const formData = new FormData();
 
-  try {
-      const resp = await fetch(cloudUrl, {
-          method: 'POST',
-          body: formData
-      })
-      if(!resp.ok) throw new Error('No se pudo subir la imagen')
-      const cloudResp = await resp.json();
-      return cloudResp.secure_url;
+    formData.append('upload_preset', 'react-journal');
+    formData.append('file', file);
 
-  } catch (error) {
-      throw new Error( error.message );
-  }
+    try {
+        const resp = await fetch(cloudUrl, {
+            method: 'POST',
+            body: formData
+        })
+        if (!resp.ok) throw new Error('No se pudo subir la imagen')
+        const cloudResp = await resp.json();
+        return cloudResp.secure_url;
+
+    } catch (error) {
+        throw new Error(error.message);
+    }
 
 }
