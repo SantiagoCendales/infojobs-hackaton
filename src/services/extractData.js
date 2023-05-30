@@ -4,7 +4,7 @@ import {
   OpenAIApi
 } from 'openai'
 
-const prompt = "Del el texto que te voy a pasar quiero que listes la información de experiencia laboral y que lo organizes en un array de objetos JSON como el siguiente. { experiencia_laboral: [ { 'puesto': ', 'empresa': ', 'fecha': 'Marzo de 2020 - Mayo de 2021' } ] }"
+const prompt = "Del el texto que te voy a pasar quiero que listes la información de educación, experiencia laboral, perfil profesional, habilidades, idiomas (asignale un nivel) y un campo mejorando la redacción del perfil profesional y que lo organizes en un array de objetos JSON como el siguiente. { 'educacion': [ { 'id': ,'titulo': '', 'fecha': '', 'institucion': '' } ], 'experiencia_laboral': [ { 'id': , 'puesto': '', 'empresa': '', 'fecha': 'Marzo de 2020 - Mayo de 2021' } ], 'habilidades': [ 'HTML', 'CSS', 'Angular' ], 'idiomas' : [{'idioma': 'ingles', 'nivel': 'basico'}], 'perfil_profesional': '', 'perfil_profesional_mejorado': '' }"
 const openaiToken = import.meta.env.VITE_OPENAI_TOKEN ?? ''
 
 const conf = new Configuration({ apiKey: openaiToken})
@@ -21,7 +21,7 @@ const getProfileInfo = async ({userCvInfo = ''}) => {
   })
   const data = completion.data.choices[0].message?.content ?? ''
   console.log(data);
-  return data
+  return JSON.parse(data)
 }
 
 export default getProfileInfo

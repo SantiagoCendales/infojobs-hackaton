@@ -5,7 +5,7 @@ export const UserDetailCard = ({title, buttonLabel, buttonAction, infoArr, notFo
     <div className="bg-white rounded-xl">
     <div className="flex justify-between items-center p-5">
       <h2 className="text-lg">{title}</h2>
-      <Button label={buttonLabel} />
+      {/* <Button label={buttonLabel} /> */}
     </div>
     <hr />
     {
@@ -32,9 +32,9 @@ export const UserDetailCard = ({title, buttonLabel, buttonAction, infoArr, notFo
                 />
               </div>
               <div className="col-span-9">
-                <h3>{data.title}</h3>
-                <p className="text-neutral-500">{data.center}</p>
-                <p className="text-neutral-500 text-sm"> {data.time} </p>
+                <h3>{data.empresa || data.titulo}</h3>
+                <p className="text-neutral-500">{data.puesto || data.institucion}</p>
+                <p className="text-neutral-500 text-sm"> {data.fecha} </p>
               </div>
             </div>
           ))

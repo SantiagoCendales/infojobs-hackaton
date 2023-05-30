@@ -8,11 +8,11 @@ import { startLoadingOffers } from "../store/main/thunks"
 export const AppRouter = () => {
   // const x = useSelector((state) => state.main.offers)
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(startLoadingOffers());
-  }, [])
+  // useEffect(() => {
+  //   dispatch(startLoadingOffers());
+  // }, [])
   
   return (
     <>

@@ -3,12 +3,12 @@ export const UserInfoCard = ({name, bornDate, email, location, phone}) => {
   return (
     <div className="bg-white rounded-xl p-5">
       <div className="grid gap-4 grid-cols-8">
-        <div className="col-span-1 text-center">
-          <div className="rounded-full overflow-hidden w-30 mx-auto">
-            <img src="https://res.cloudinary.com/dnzesrac8/image/upload/v1685075461/hackaton/index_ygxbhn.png" alt="" />
+        <div className="col-span-2 text-center">
+          <div className="rounded-full overflow-hidden w-24 h-24  mx-auto">
+            <img className="object-cover" src="https://res.cloudinary.com/dnzesrac8/image/upload/v1681929626/samples/animals/cat.jpg" alt="" />
           </div>
         </div>
-        <div className="col-span-7">
+        <div className="col-span-6">
           <h3 className="text-xl">{name}</h3>
           <p className="text-neutral-500">{bornDate}</p>
           <p className="text-neutral-500 mb-4">{email}</p>

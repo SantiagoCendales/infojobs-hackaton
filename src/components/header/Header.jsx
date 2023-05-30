@@ -16,12 +16,12 @@ const Header = () => {
           >
               CV
           </NavLink>
-          <NavLink
+          {/* <NavLink
               to="/offers"
               className={({isActive}) => `${isActive ? 'text-blue-500': ''}`}
           >
               Mis ofertas
-          </NavLink>
+          </NavLink> */}
         </div>
       </Container>
     </header>
