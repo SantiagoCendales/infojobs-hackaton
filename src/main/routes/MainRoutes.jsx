@@ -7,7 +7,7 @@ export const MainRoutes = () => {
     <>
       <Header></Header>
       <Routes>
-        <Route path='cv' element={<CvPage></CvPage>}></Route>
+        <Route path='/' element={<CvPage></CvPage>}></Route>
 
         {/* <Route path='offers' element={<OffersPage></OffersPage>}></Route> */}
 
